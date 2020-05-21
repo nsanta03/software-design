@@ -20,3 +20,8 @@ get "/" do
   puts @events.inspect
   view "events"
 end
+
+get "/events/:id" do
+    puts params.inspect
+    "Hello"
+end
