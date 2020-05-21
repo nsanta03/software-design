@@ -22,6 +22,8 @@ get "/" do
 end
 
 get "/events/:id" do
+    @event = events_table.where(:id => params["id"]).to_a[0]
+    puts @event.inspect
     puts params.inspect
     "Hello"
 end
