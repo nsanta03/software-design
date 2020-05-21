@@ -23,14 +23,15 @@ end
 
 get "/events/:id" do
     @event = events_table.where(:id => params["id"]).to_a[0]
+    @rsvps = rsvps_table.where(:event_id => params["id"]).to_a
     puts @event.inspect
-    puts params.inspect
+    puts @rsvps.inspect
     view "event"
 end
 
 
 get "/events/:id/rsvps/new" do
-    @event= events_table.where(:id => params["id"]).to_a[0])
+    @event= events_table.where(:id => params["id"]).to_a[0]
     puts @event.inspect
     view "new_rsvp"
 end
