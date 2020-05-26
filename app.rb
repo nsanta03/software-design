@@ -24,7 +24,7 @@ end
 get "/events/:id" do
     @event = events_table.where(:id => params["id"]).to_a[0]
     @rsvps = rsvps_table.where(:event_id => params["id"]).to_a
-    @count=rsvps_table.where(:event_id => params["id"], :going => true.)count
+    @count=rsvps_table.where(:event_id => params["id"], :going => true).count
     puts @event.inspect
     puts @rsvps.inspect
     view "event"
