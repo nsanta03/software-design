@@ -24,6 +24,7 @@ end
 get "/events/:id" do
     @event = events_table.where(:id => params["id"]).to_a[0]
     @rsvps = rsvps_table.where(:event_id => params["id"]).to_a
+    @count=rsvps_table.where(:event_id => params["id"], :going => true.)count
     puts @event.inspect
     puts @rsvps.inspect
     view "event"
@@ -44,4 +45,5 @@ get "/events/:id/rsvps/create" do
         :email => params["email"],
         :comments => params["comments"])
     "Got it!"
+    view "create_rsvp"
 end
