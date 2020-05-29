@@ -44,6 +44,6 @@ get "/events/:id/rsvps/create" do
         :name => params["name"],
         :email => params["email"],
         :comments => params["comments"])
-    "Got it!"
+    #"Got it!"
     view "create_rsvp"
 end
